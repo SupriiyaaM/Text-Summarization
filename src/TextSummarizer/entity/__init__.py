@@ -20,3 +20,18 @@ class DataTransformationConfig:
     root_dir : Path
     data_path : Path
     tokenizer_name : Path
+    
+@dataclass(frozen=True)
+class ModelTrainerConfig:
+    root_dir: Path
+    data_path: Path
+    model_ckpt: Path
+    evaluation_strategy: str
+    eval_steps: int
+    num_train_epochs: int
+    logging_steps: int
+    save_steps: float
+    weight_decay: float
+    gradient_accumulation_steps: int
+    warmup_steps: int
+    per_device_train_batch_size: int

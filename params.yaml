@@ -1,1 +1,14 @@
-key : value
+#training parameters
+
+TrainingArguments:
+  num_train_epochs: 1 #number of times the entire training dataset will be passed through the model
+  warmup_steps: 500 #learning rate gradually increases from 0 to its initial value
+  per_device_train_batch_size: 1 #means that each iteration will use only one sample ??
+  weight_decay: 0.01 #1% of the weight value will be subtracted from the weight during each update step
+  logging_steps: 10 #Logging every 10 steps helps track the training progress
+  evaluation_strategy: steps #evaluation done at regular step intervals
+  eval_steps: 500 # model evaluated every 500 steps; monitor performance periodically
+  save_steps: 1e6 #how often to save the model during training
+  gradient_accumulation_steps: 16 #??
+
+

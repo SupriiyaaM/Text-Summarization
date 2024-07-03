@@ -1,20 +1,26 @@
 artifacts_root:  artifacts  #artifacts folder
 
 #data ingestion config
-data ingestion:
+data_ingestion:
   root_dir: artifacts/data_ingestion #type: Path
   source_url: https://github.com/SupriiyaaM/Datasets/raw/main/summarizer-data.zip
   local_data_file: artifacts/data_ingestion/data.zip 
   unzip_dir: artifacts/data_ingestion
 
-data validation:
+data_validation:
   root_dir: artifacts/data_validation
   status_file: artifacts/data_validation/status.txt
   all_required_files: ["test","train","validation"] #dataset files imported earlier
 
 #will save tranformed data
-data transformation:
+data_transformation:
   root_dir: artifacts/data_transformation
-  data_path: artifacts/data_ingestion/samsum_dataset
+  data_path: artifacts/data_ingestion/samsum_dataset #data to be transformed
   tokenizer_name: google/pegasus-cnn_dailymail
+  
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  data_path: artifacts/data_transformation/samsum_dataset
+  model_ckpt: google/pegasus-cnn_dailymail
   
