@@ -35,3 +35,11 @@ class ModelTrainerConfig:
     gradient_accumulation_steps: int
     warmup_steps: int
     per_device_train_batch_size: int
+    
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    data_path: Path
+    model_path: Path
+    tokenizer_path: Path
+    metric_file_name: Path

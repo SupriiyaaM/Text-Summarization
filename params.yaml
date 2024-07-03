@@ -1,7 +1,7 @@
 #training parameters
 
 TrainingArguments:
-  num_train_epochs: 1 #number of times the entire training dataset will be passed through the model
+  num_train_epochs: 5 #number of times the entire training dataset will be passed through the model
   warmup_steps: 500 #learning rate gradually increases from 0 to its initial value
   per_device_train_batch_size: 1 #means that each iteration will use only one sample ??
   weight_decay: 0.01 #1% of the weight value will be subtracted from the weight during each update step
